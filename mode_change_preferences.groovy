@@ -58,13 +58,13 @@ def updated(settings) {
 	subscribe(app, changeMode)
 }
 def changeMode(evt) {
-  log.debug "Mode changed to $location.mode"
-  if(location.mode == newMode) {
+  log.debug "Mode changed to $evt.value"
+  if(evt.value == newMode) {
     homeAway()
   }
 
   else {
-  	if(location.mode != newMode)
+  	if(evt.value != newMode)
     log.debug("No changes")
   }
 }
